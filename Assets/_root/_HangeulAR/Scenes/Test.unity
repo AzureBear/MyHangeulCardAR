@@ -511,7 +511,7 @@ MonoBehaviour:
         m_MethodName: PlaceFurniture
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1148618361502076517, guid: 8fb93c4e09c131b4daeaf5f278fd55aa,
+          m_ObjectArgument: {fileID: 8856780360629498584, guid: 5b5ade683fc7a2f488a1b916c5b3704d,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -878,8 +878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d598f7735f9563c449ab1c7486b83955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trgt: {fileID: 8948657967318176100}
-  tpostxt: {fileID: 6547885398907560968}
+  target: {fileID: 0}
+  targetPositionText: {fileID: 0}
 --- !u!224 &2689643272244601859
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1993,7 +1993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fedde4c39e68cd4086a5e012661e684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ptgt: {fileID: 1732732328974292131}
+  PlacementTarget: {fileID: 0}
 --- !u!1 &6778049086889377736
 GameObject:
   m_ObjectHideFlags: 0

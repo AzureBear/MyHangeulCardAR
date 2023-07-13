@@ -5,14 +5,14 @@ using TMPro;
 
 public class TargetPositionDisplay : MonoBehaviour
 {
-    public GameObject trgt;
-    public TextMeshProUGUI tpostxt;
+    public GameObject target;
+    public TextMeshProUGUI targetPositionText;
 
     void Update()
     {
-        if (trgt.activeInHierarchy)
+        if (target.activeInHierarchy)
         {
-            tpostxt.text = "(" + trgt.transform.position + ")";
+            targetPositionText.text = "(" + targetPositionText.transform.position + ")";
         }
     }
 }
