@@ -6,7 +6,7 @@ using UnityEngine.XR.ARSubsystems;
 
 public class PlaceTarget : MonoBehaviour
 {
-    ARRaycastManager rcm;
+    public ARRaycastManager rcm;
     GameObject placeTarget;
     private void Start()
     {

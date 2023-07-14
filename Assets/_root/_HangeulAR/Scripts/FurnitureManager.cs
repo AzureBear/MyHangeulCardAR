@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class FurnitureManager : MonoBehaviour
 {
-    public Transform PlacementTarget;
+    public Transform ptgt;
     public void PlaceFurniture(GameObject furniturePrefab)
     {
-        GameObject furniture = Instantiate(furniturePrefab, PlacementTarget.position, PlacementTarget.rotation);
+        GameObject fur = Instantiate(furniturePrefab, ptgt.position, ptgt.rotation);
     }
 }
