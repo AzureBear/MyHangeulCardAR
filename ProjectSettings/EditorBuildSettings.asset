@@ -9,6 +9,8 @@ EditorBuildSettings:
     path: Assets/_root/_Sandbox/test2.unity
     guid: 83c5b09df286876458572aa8030605f9
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5125d6f8f4179734984c89489aa6a46a,
+      type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 940587a5990b8304b97c2094cca4bf24,
       type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 9e9a21af975286d4b80dcd0bd7e3ec30,
