@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HangleGame : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public GameObject[] buttons; // 버튼 4개
-
+    public int[] cardStates = new int[14];
     public int[] state = { 0, 1, 2 }; // 자음카드 상태 0,1,2
+    public Toggle[] toggles;
+    public ToggleGroup toggleGroup;
 
     // consonant 값 딕셔너리 14개 저장 각 값 0으로 초기화
     public Dictionary<string, int> cards = new Dictionary<string, int>()
@@ -59,6 +60,8 @@ public class HangleGame : MonoBehaviour
         }
     }
 
+    // ... 
+
     // 버튼 설정 메서드
     private void SetupButtons()
     {
@@ -68,11 +71,15 @@ public class HangleGame : MonoBehaviour
         if (question != null) // 문제가 있을시 선택지 배열 섞은 후 버튼 텍스트에 할당
         {
             ShuffleArray(question);
-            for (int i = 0; i < buttons.Length; i++)
+            for (int i = 0; i < toggles.Length; i++)
             {
-                buttons[i].GetComponentInChildren<Text>().text = question[i + 1];
+                // Change the text of each toggle to match the question options
+                toggles[i].GetComponentInChildren<Text>().text = question[i + 1];
+                toggles[i].group = toggleGroup; // Assign the ToggleGroup to each toggle
+                toggles[i].isOn = false; // Ensure all toggles are initially turned off
             }
         }
+
     }
 
     // 랜덤한 정답 가져오기
@@ -84,7 +91,7 @@ public class HangleGame : MonoBehaviour
 
     // 정답이 포함된 문제 4지선다 가져오기
     private string[] GetQuestionWithAnswer(string answer)
-    {   
+    {
         foreach (var questionList in questions.Values)
         {
             foreach (var question in questionList)
@@ -92,7 +99,8 @@ public class HangleGame : MonoBehaviour
                 if (question[0] == answer)
                     return question;
             }
-        } return null;
+        }
+        return null;
     }
 
     // questions 딕셔너리에서 밸류값인 리스트 안 배열 중
@@ -122,4 +130,5 @@ public class HangleGame : MonoBehaviour
 
         }
     }
+
 }
