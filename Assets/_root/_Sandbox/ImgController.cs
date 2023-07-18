@@ -18,11 +18,15 @@ public class ImgController : MonoBehaviour
 
     void Awake()
     {
+
         foreach (var cardPrefab in cardPrefabs)
         {
             ARObjects.Add(cardPrefab.name, cardPrefab);
         }
     }
+
+    
+
 
     private void OnEnable()
     {
