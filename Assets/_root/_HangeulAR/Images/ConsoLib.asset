@@ -27,7 +27,7 @@ MonoBehaviour:
       m_GuidHigh: 9873963527125291656
     m_Size: {x: 0.1, y: 0.1}
     m_SpecifySize: 1
-    m_Name: Cons00
+    m_Name: 01
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5726721018713567272
@@ -37,5 +37,5 @@ MonoBehaviour:
       m_GuidHigh: 7372040218561010505
     m_Size: {x: 0.1, y: 0.1}
     m_SpecifySize: 1
-    m_Name: Cons01
+    m_Name: 02
     m_Texture: {fileID: 0}

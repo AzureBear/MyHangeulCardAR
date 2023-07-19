@@ -11,6 +11,7 @@ public class HangeulGame : MonoBehaviour
     public ToggleGroup toggleGroup;
     public Toggle[] toggles = new Toggle[4];
 
+
     // consonant 값 딕셔너리 14개 저장 각 값 0으로 초기화
     public Dictionary<string, int> cards = new Dictionary<string, int>()
     {
@@ -18,10 +19,10 @@ public class HangeulGame : MonoBehaviour
         {"ㅇ", 0 },{"ㅈ", 0 },{"ㅊ", 0 },{"ㅋ", 0 },{"ㅌ", 0 },{"ㅍ", 0 },{"ㅎ", 0 }
     };
 
-    public string[] answers =
+    public string [,] answers =
     {
-        "고양이", "고기", "나비", "너구리", "다람쥐", "돼지", "라면", "라디오", "모자", "만두", "바지", "비둘기", "수박", "선생님",
-        "우유", "여우", "자동차", "지하철", "축구", "치즈", "코끼리", "카메라", "토끼", "태극기", "포도", "파인애플", "호랑이", "학교"
+       { "고양이", "고기" }, {"나비", "너구리" }, {"다람쥐", "돼지" },{ "라면", "라디오" }, {"모자", "만두" }, {"바지", "비둘기" }, {"수박", "선생님" },
+        { "우유", "여우" }, {"자동차", "지하철" },{ "축구", "치즈" }, {"코끼리", "카메라" },{ "토끼", "태극기" }, {"포도", "파인애플" }, {"호랑이", "학교" }
     };
 
     // 자음카드마다 4지선다 2개문제 추가
@@ -104,6 +105,7 @@ public class HangeulGame : MonoBehaviour
     {
         ShuffleQuestions();
         SetupButtons();
+
     }
 
     // 4지선다 랜덤 섞기
@@ -140,8 +142,9 @@ public class HangeulGame : MonoBehaviour
     // 랜덤한 정답 가져오기
     private string GetRandomAnswer()
     {
-        int randomIndex = Random.Range(0, answers.Length); // 정답 배열 길이 랜덤 인덱스 생성
-        return answers[randomIndex]; // 해당 인덱스에 위치한 정답 리턴
+        //int randomIndex = Random.Range(0, answers.Length); // 정답 배열 길이 랜덤 인덱스 생성
+
+        return answers[Random.Range(0,14),Random.Range(0,2)]; // 해당 인덱스에 위치한 정답 리턴
     }
 
     // 정답이 포함된 문제 4지선다 가져오기

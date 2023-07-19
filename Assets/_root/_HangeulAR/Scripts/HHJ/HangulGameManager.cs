@@ -10,7 +10,7 @@ public class HangulGameManager : MonoBehaviour
     public GameObject canvasMenu;
     public GameObject canvasCardScan;
     public GameObject canvasQuery;
-    public GameObject arDectectiong;
+    //public GameObject arDectectiong;
     public Dictionary<string, GameObject> menus = new Dictionary<string, GameObject>();
     void Awake()
     {
@@ -21,7 +21,7 @@ public class HangulGameManager : MonoBehaviour
         menus.Add("result", canvasResult);
         menus.Add("card", canvasCardScan);
         menus.Add("query", canvasQuery);
-        menus.Add("ar", arDectectiong);
+       // menus.Add("ar", arDectectiong);
     }
     public void MeuSelect(string menu)
     {
@@ -29,6 +29,7 @@ public class HangulGameManager : MonoBehaviour
         {
             menus[key].SetActive(false);
         }
+        if(menu != "ar")
         menus[menu].SetActive(true);
     }
 

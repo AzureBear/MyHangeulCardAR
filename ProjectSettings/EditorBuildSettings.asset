@@ -8,14 +8,23 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_root/_HangeulAR/Scenes/GameHHJ.unity
     guid: fb689b0252204ed4484ebcef1e9c59eb
+  - enabled: 0
+    path: Assets/_root/_HangeulAR/Scenes/TestMenu.unity
+    guid: 469b338f0f41e3749b890620f22558fc
+  - enabled: 0
+    path: Assets/_root/_HangeulAR/Scenes/TestResult.unity
+    guid: dce892cc9267d57428d6e9af1e6dff2d
+  - enabled: 0
+    path: Assets/_root/_HangeulAR/Scenes/TestGame.unity
+    guid: 4e2e45fca8eb75e4e9623a55ade7f671
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5125d6f8f4179734984c89489aa6a46a,
       type: 2}
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6af891086a5bbe946bc2e4ab8bb97ff1,
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 77eda7ac1a8e8ce4288b633b7e5bace5,
       type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 60de5167fe4517b4ba0547593d87ccda,
       type: 2}
-    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: e5975588844798747889bcbd54fff1bc,
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 756bc886aa1144544abd7adf139f3888,
       type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f369714468769d94dbf5d6b072b36d70,
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0e397f8ff99d8b642bec9b9a23b8feff,
       type: 2}
