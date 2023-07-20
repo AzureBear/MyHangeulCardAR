@@ -8,15 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_root/_HangeulAR/Scenes/GameHHJ.unity
     guid: fb689b0252204ed4484ebcef1e9c59eb
-  - enabled: 0
-    path: Assets/_root/_HangeulAR/Scenes/TestMenu.unity
-    guid: 469b338f0f41e3749b890620f22558fc
-  - enabled: 0
-    path: Assets/_root/_HangeulAR/Scenes/TestResult.unity
-    guid: dce892cc9267d57428d6e9af1e6dff2d
-  - enabled: 0
-    path: Assets/_root/_HangeulAR/Scenes/TestGame.unity
-    guid: 4e2e45fca8eb75e4e9623a55ade7f671
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5125d6f8f4179734984c89489aa6a46a,
       type: 2}
