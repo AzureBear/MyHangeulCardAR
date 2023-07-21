@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.SceneManagement;
 
 public class HangulGameManager : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class HangulGameManager : MonoBehaviour
     public GameObject canvasMenu;
     public GameObject canvasCardScan;
     public GameObject canvasQuery;
+    public GameObject canvasStauts;
+
+
     //public GameObject arDectectiong;
     public Dictionary<string, GameObject> menus = new Dictionary<string, GameObject>();
     void Awake()
@@ -34,6 +38,7 @@ public class HangulGameManager : MonoBehaviour
         menus.Add("result", canvasResult);
         menus.Add("card", canvasCardScan);
         menus.Add("query", canvasQuery);
+        
        // menus.Add("ar", arDectectiong);
 
     }
@@ -60,7 +65,9 @@ public class HangulGameManager : MonoBehaviour
             cardStates[res] = winros;
             if (leftCards == 0)
             {
+                
                 menus["result"].SetActive(true);
+                
                 canvasResult.GetComponent<ResultManager>().Finale(cardStates);
             }
         }
@@ -69,19 +76,7 @@ public class HangulGameManager : MonoBehaviour
 
     public void ResetAll()
     {
-        leftText.text = "남은카드수 14";
-
-        for (int i = 0; i < cardStates.Length; i++)
-        {
-            cardStates[i] = 0;
-        }
-        leftCards = 14;
-
-        foreach (MoveToQuery qc in QueryContainer)
-        {
-            qc.gameObject.SetActive(true);
-        }
-        MeuSelect("menu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 

@@ -2880,7 +2880,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftText: {fileID: 1424866134}
-  deb: {fileID: 0}
   cardStates: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   leftCards: 14
   timeBar: {fileID: 1729497674}
@@ -2888,7 +2887,6 @@ MonoBehaviour:
   canvasMenu: {fileID: 873115632}
   canvasCardScan: {fileID: 1321873146}
   canvasQuery: {fileID: 1772474433}
-  statusCan: {fileID: 1346826598}
 --- !u!1 &732323563
 GameObject:
   m_ObjectHideFlags: 0
@@ -5024,6 +5022,7 @@ MonoBehaviour:
   - {fileID: 173850407}
   - {fileID: 1181477500}
   incorrectImg: {fileID: 21300000, guid: 4707f7f3622f22a44a54ce23b3a85a1a, type: 3}
+  statusText: {fileID: 1396848052}
 --- !u!1 &971298612
 GameObject:
   m_ObjectHideFlags: 0
@@ -6778,7 +6777,7 @@ RectTransform:
   - {fileID: 984934148}
   - {fileID: 382089460}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6880,7 +6879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1346826599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6959,7 +6958,7 @@ RectTransform:
   - {fileID: 1396848051}
   - {fileID: 1424866133}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9178,7 +9177,7 @@ RectTransform:
   - {fileID: 2018922411}
   - {fileID: 145189152}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9199,8 +9198,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imgTrkMan: {fileID: 865608903}
   manager: {fileID: 690138335}
+  Canvas: {fileID: 0}
   tb: {fileID: 1729497678}
   cq: {fileID: 0}
+  Good: {fileID: 0}
+  Bad: {fileID: 0}
   toggleGroup: {fileID: 2018922412}
   toggles:
   - {fileID: 160601164}
