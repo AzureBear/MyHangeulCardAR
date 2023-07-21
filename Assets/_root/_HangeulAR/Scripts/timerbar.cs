@@ -7,56 +7,53 @@ public class timerbar : MonoBehaviour
 {
     public Image timerimage;
     public HangulGameManager hgm;
-    public float maxTime = 30f;
+    public HangeulGame game;
+    public float maxTime = 20f;
     private float currentTime;
     private int currentQz;
+    public bool isRun = false;
 
-    public void OnEnable()
+    public void Awake()
     {
-        currentTime = maxTime;
         timerimage = GetComponent<Image>();
         if (!timerimage)
         {
             timerimage = transform.Find("Image").GetComponent<Image>();
         }
-
-        UpdateTimeBar();
     }
 
     public void Update()
     {
-        if (currentTime > 0f)
+        if (isRun)
         {
             currentTime -= Time.deltaTime;
             UpdateTimeBar();
+            if (currentTime <= 0f)
+            {
+                timeOver(currentQz);
+                isRun = false;
+            }
         }
-        else if (currentTime == 0f)
-        {
-            timeOver(currentQz);
-            UpdateTimeBar();
-        }
+    }
+
+    public void ReceiveQz(int arg)
+    {
+        currentTime = maxTime;
+        currentQz = arg;
+        isRun = true;
     }
 
     public void timeOver(int curQz)
     {
+        game.cq.KillOfQz();
         hgm.cardStates[curQz] = 2;
+        hgm.leftCards--;
+        game.gameObject.SetActive(false);
     }
 
     public void UpdateTimeBar()
     {
         float fillAmount = Mathf.Clamp01(currentTime / maxTime);
         timerimage.fillAmount = fillAmount;
-    }
-
-    public void ResetTimer()
-    {
-        currentTime = maxTime;
-        UpdateTimeBar();
-    }
-
-    public void SetCurrentTimeToMaxTime()
-    {
-        currentTime = maxTime;
-        UpdateTimeBar();
     }
 }

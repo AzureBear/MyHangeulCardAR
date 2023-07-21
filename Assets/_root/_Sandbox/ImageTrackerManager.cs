@@ -12,32 +12,7 @@ public class ImageTrackerManager : MonoBehaviour
     public Dictionary<string, GameObject> allObjects;
     public ARTrackedImageManager arTrackedImageManager;
     private IReferenceImageLibrary refImageLibrary;
-    public Texture correctTexture;
-    public Texture inCorrectTexture;
 
-
-
-
-    private void Update()
-    {
-        MapToCheck();
-    }
-
-    void MapToCheck()
-    {
-        foreach (GameObject go in allObjects.Values)
-        {
-            if (go.activeInHierarchy)
-            {
-                int cardIndex = int.Parse(go.name);
-                int cardState = hgm.cardStates[cardIndex];
-                if (cardState == 1)
-                    go.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", correctTexture);
-                else if (cardState == 2)
-                    go.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", inCorrectTexture);
-            }
-        }
-    }
 
     void LoadObjectDictionary()
     {
