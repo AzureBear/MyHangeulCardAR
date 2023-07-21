@@ -14,9 +14,7 @@ public class ChoiceQuiz : MonoBehaviour
         {
             item.gameObject.SetActive(false);
         }
-
         quiz[Random.Range(0, quiz.Length)].SetActive(true);
-
     }
 
     public void EndOfQuiz(string identifier)

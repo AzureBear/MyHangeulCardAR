@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 
 public class HangulGameManager : MonoBehaviour
 {
     public static HangulGameManager instance;
     public static HangeulGame queryGame;
     public static timerbar tb;
-    public static GameObject sc;
+    public static MoveToQuery[] QueryContainer = new MoveToQuery[14];
     public TextMeshProUGUI leftText;
-    public TextMeshProUGUI deb;
 
     public int[] cardStates = new int[14] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    private bool gameClear = false;
     public int leftCards = 14;
 
     public GameObject timeBar;
@@ -21,14 +20,12 @@ public class HangulGameManager : MonoBehaviour
     public GameObject canvasMenu;
     public GameObject canvasCardScan;
     public GameObject canvasQuery;
-    public GameObject statusCan;
     //public GameObject arDectectiong;
     public Dictionary<string, GameObject> menus = new Dictionary<string, GameObject>();
     void Awake()
     {
         queryGame = canvasQuery.GetComponent<HangeulGame>();
         tb = timeBar.GetComponent<timerbar>();
-        sc = statusCan;
 
         if (instance == null) HangulGameManager.instance = this;
         else Destroy(gameObject);
@@ -40,13 +37,18 @@ public class HangulGameManager : MonoBehaviour
        // menus.Add("ar", arDectectiong);
 
     }
+    void Start()
+    {
+        MeuSelect("menu");
+    }
+
     public void MeuSelect(string menu)
     {
         foreach (string key in menus.Keys)
         {
             menus[key].SetActive(false);
         }
-        if(menu != "ar")
+        if (menu != "ar")
         menus[menu].SetActive(true);
     }
 
@@ -54,25 +56,33 @@ public class HangulGameManager : MonoBehaviour
     {
         if (leftCards != 0)
         {
-            sc.SetActive(true);
             leftCards--;
-            leftText.text = $"남은카드수 {leftCards}";
             cardStates[res] = winros;
             if (leftCards == 0)
             {
-                sc.SetActive(false);
                 menus["result"].SetActive(true);
                 canvasResult.GetComponent<ResultManager>().Finale(cardStates);
             }
         }
+        leftText.text = $"남은카드수 {leftCards}";
     }
 
-    void Start()
+    public void ResetAll()
     {
+        leftText.text = "남은카드수 14";
+
+        for (int i = 0; i < cardStates.Length; i++)
+        {
+            cardStates[i] = 0;
+        }
+        leftCards = 14;
+
+        foreach (MoveToQuery qc in QueryContainer)
+        {
+            qc.gameObject.SetActive(true);
+        }
         MeuSelect("menu");
     }
-    void Update()
-    {
-        deb.text = $"{cardStates[0]},{cardStates[1]},{cardStates[2]},{cardStates[3]},{cardStates[4]},{cardStates[5]},{cardStates[6]},{cardStates[7]},{cardStates[8]},{cardStates[9]},{cardStates[10]},{cardStates[11]},{cardStates[12]},{cardStates[13]}";
-    }
+
+
 }

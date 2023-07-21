@@ -14,8 +14,11 @@ public class HangeulGame : MonoBehaviour
 
     public ImageTrackerManager imgTrkMan;
     public HangulGameManager manager;
+    public GameObject Canvas;
     public timerbar tb;
     public ChoiceQuiz cq;
+    public AudioSource Good;
+    public AudioSource Bad;
     public ToggleGroup toggleGroup;
     public Toggle[] toggles = new Toggle[4];
     public string motherName;
@@ -103,6 +106,7 @@ public class HangeulGame : MonoBehaviour
 
     public void OnButtonClick(int fs, int sc)
     {
+        Canvas.SetActive(false);
         int plusArg = fs + 1;
 
         if (manager.cardStates[fs] == 0)
@@ -137,6 +141,7 @@ public class HangeulGame : MonoBehaviour
                 string selectedAnswer = toggle.GetComponentInChildren<TextMeshProUGUI>().text;
                 if (selectedAnswer == answer)
                 {
+                    Good.Play();
                     cq.KillOfQz();
                     manager.CardCall(currentCard, 1);
                     tb.isRun = false;
@@ -144,6 +149,7 @@ public class HangeulGame : MonoBehaviour
                 }
                 else
                 {
+                    Bad.Play();
                     cq.KillOfQz();
                     manager.CardCall(currentCard, 2);
                     tb.isRun = false;
@@ -153,9 +159,9 @@ public class HangeulGame : MonoBehaviour
                 break;
             }
         }
+
+        Canvas.SetActive(true);
     }
-
-
 
     public string[] ShuffleChoices(string[] choices)
     {

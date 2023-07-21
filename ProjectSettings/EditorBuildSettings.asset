@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_root/_HangeulAR/Scenes/GameHHJ.unity
-    guid: fb689b0252204ed4484ebcef1e9c59eb
+    path: Assets/_root/_HangeulAR/Scenes/MyHangeulCardAR_Main.unity
+    guid: 64a6347c3d2868641b0ab3c0f3218046
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5125d6f8f4179734984c89489aa6a46a,
       type: 2}

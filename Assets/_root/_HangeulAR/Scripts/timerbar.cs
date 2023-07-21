@@ -8,7 +8,7 @@ public class timerbar : MonoBehaviour
     public Image timerimage;
     public HangulGameManager hgm;
     public HangeulGame game;
-    public float maxTime = 20f;
+    public float maxTime = 10f;
     private float currentTime;
     private int currentQz;
     public bool isRun = false;
@@ -45,9 +45,11 @@ public class timerbar : MonoBehaviour
 
     public void timeOver(int curQz)
     {
+        game.Bad.Play();
         game.cq.KillOfQz();
         hgm.cardStates[curQz] = 2;
         hgm.leftCards--;
+        hgm.leftText.text = $"남은카드수 {hgm.leftCards}";
         game.gameObject.SetActive(false);
     }
 
